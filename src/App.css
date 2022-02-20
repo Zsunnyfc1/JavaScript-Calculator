@@ -2,37 +2,74 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.calculator {
+  height: 484px;
+  max-width: 460px;
+  border-radius: 1px;
+  background-color: gray;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.output {
+  height: 80px;
+  background-color: hsl(0, 0%, 25%);
+}
+
+.keys {
+  gap: 1px;
+  padding: 0px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.keys button:first-child {
+  color: #db1234;
+  grid-column-end: 4;
+  grid-column-start: 1;
+  background-color: lightgray;
+}
+
+.keys button:nth-child(15) {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.keys button:nth-child(2),
+.keys button:nth-child(6),
+.keys button:nth-child(10),
+.keys button:nth-child(14),
+.keys button:nth-child(17) {
+  background: hsl(0, 0%, 12%);
+  color: hsl(192, 75%, 70%);
+}
+
+
+.input,
+.result {
+  color: #36f0a9;
+  height: 80px;
+  display: block;
+  font-size: 50px;
+  text-align: right;
+  padding-right: 25px;
+}
+
+button {
+  border: 1px solid hsl(0, 0%, 75%, 0.3);
+  font-family: Arial;
+  font-weight: lighter;
+  font-size: 28px;
+  min-width: 80px;
+  min-height: 80px;
 }
