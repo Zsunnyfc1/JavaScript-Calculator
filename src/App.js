@@ -54,7 +54,7 @@ function App() {
   const handleSubmit = () => {
     console.log({ calculatorData });
 
-    const total = eval(calculatorData); /*jshint -W061 */
+    const total = eval(calculatorData); 
     setInput(total);
     setOutput(`${total} = ${total}`);
     setCalculatorData(`${total}`);
@@ -165,7 +165,7 @@ function App() {
   };
 
   React.useEffect(() => {
-    handleOutput(); // eslint-disable-line react-hooks/exhaustive-deps
+    handleOutput(); 
   }, [calculatorData]);
 
   return (
