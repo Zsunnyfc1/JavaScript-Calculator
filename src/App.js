@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './App.css';
 
 const calcData = [
@@ -54,7 +54,7 @@ function App() {
   const handleSubmit = () => {
     console.log({ calculatorData });
 
-    const total = eval(calculatorData);
+    const total = eval(calculatorData); /*jshint -W061 */
     setInput(total);
     setOutput(`${total} = ${total}`);
     setCalculatorData(`${total}`);
@@ -119,10 +119,7 @@ function App() {
       const lastChatIsOperator = operators.includes(lastChat) || lastChat === "*";
       
       const validOp = value === "x" ? "*" : value;
-      if (
-        (lastChatIsOperator && value !== "-") ||
-        beforeLastChatIsOperator && lastChatIsOperator
-      ) {
+      if ((lastChatIsOperator && value !== "-") || (beforeLastChatIsOperator && lastChatIsOperator)) {
         if (beforeLastChatIsOperator) {
           const updatedValue = `${calculatorData.substring(
             0,
@@ -172,7 +169,8 @@ function App() {
   }, [calculatorData]);
 
   return (
-<div className="container">
+  // eslint-disable-line react-hooks/exhaustive-deps
+     <div className="container">
       <div className="calculator">
         <Display input={input} output={output} />
         <Keyboard handleInput={handleInput} />
