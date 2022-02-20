@@ -165,11 +165,11 @@ function App() {
   };
 
   React.useEffect(() => {
-    handleOutput();
+    handleOutput(); // eslint-disable-line react-hooks/exhaustive-deps
   }, [calculatorData]);
 
   return (
-  // eslint-disable-line react-hooks/exhaustive-deps
+  
      <div className="container">
       <div className="calculator">
         <Display input={input} output={output} />
